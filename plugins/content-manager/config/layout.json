@@ -1,1 +1,46 @@
-{}
+{
+  "recipe": {
+    "attributes": {
+      "reddit_id": {
+        "appearance": ""
+      },
+      "title": {
+        "appearance": ""
+      },
+      "author": {
+        "appearance": ""
+      },
+      "srcLink": {
+        "appearance": ""
+      },
+      "description": {
+        "appearance": ""
+      },
+      "link": {
+        "appearance": ""
+      },
+      "linkType": {
+        "appearance": ""
+      },
+      "timeStamp": {
+        "appearance": ""
+      },
+      "permalink": {
+        "appearance": ""
+      },
+      "recipe": {
+        "appearance": ""
+      },
+      "rawRecipe": {
+        "appearance": ""
+      }
+    }
+  },
+  "ingredients": {
+    "attributes": {
+      "name": {
+        "appearance": ""
+      }
+    }
+  }
+}

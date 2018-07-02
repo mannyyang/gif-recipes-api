@@ -1,0 +1,46 @@
+{
+  "connection": "default",
+  "collectionName": "recipe",
+  "info": {
+    "name": "recipe",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "reddit_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "srcLink": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string"
+    },
+    "linkType": {
+      "type": "string"
+    },
+    "timeStamp": {
+      "type": "date"
+    },
+    "permalink": {
+      "type": "string"
+    },
+    "recipe": {
+      "type": "text"
+    },
+    "rawRecipe": {
+      "type": "text"
+    }
+  }
+}

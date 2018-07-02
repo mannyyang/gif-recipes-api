@@ -1,10 +1,13 @@
 {
-  "host": "localhost",
+  "host": "quixcipes.com",
   "port": "${process.env.PORT || 1337}",
   "autoReload": {
     "enabled": false
   },
   "cron": {
     "enabled": false
+  },
+  "admin": {
+    "path": "/dashboard"
   }
 }

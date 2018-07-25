@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Ingredients.js service
+ * Ingredient.js service
  *
  * @description: A set of functions similar to controller's actions to avoid code duplication.
  */
@@ -19,14 +19,14 @@ module.exports = {
 
   fetchAll: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('ingredients', params);
+    const filters = strapi.utils.models.convertParams('ingredient', params);
     // Select field to populate.
-    const populate = Ingredients.associations
+    const populate = Ingredient.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Ingredients
+    return Ingredient
       .find()
       .where(filters.where)
       .sort(filters.sort)
@@ -36,20 +36,20 @@ module.exports = {
   },
 
   /**
-   * Promise to fetch a/an ingredients.
+   * Promise to fetch a/an ingredient.
    *
    * @return {Promise}
    */
 
   fetch: (params) => {
     // Select field to populate.
-    const populate = Ingredients.associations
+    const populate = Ingredient.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
-    return Ingredients
-      .findOne(_.pick(params, _.keys(Ingredients.schema.paths)))
+    return Ingredient
+      .findOne(_.pick(params, _.keys(Ingredient.schema.paths)))
       .populate(populate);
   },
 
@@ -61,65 +61,65 @@ module.exports = {
 
   count: (params) => {
     // Convert `params` object to filters compatible with Mongo.
-    const filters = strapi.utils.models.convertParams('ingredients', params);
+    const filters = strapi.utils.models.convertParams('ingredient', params);
 
-    return Ingredients
+    return Ingredient
       .count()
       .where(filters.where);
   },
 
   /**
-   * Promise to add a/an ingredients.
+   * Promise to add a/an ingredient.
    *
    * @return {Promise}
    */
 
   add: async (values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Ingredients.associations.map(ast => ast.alias));
-    const data = _.omit(values, Ingredients.associations.map(ast => ast.alias));
+    const relations = _.pick(values, Ingredient.associations.map(ast => ast.alias));
+    const data = _.omit(values, Ingredient.associations.map(ast => ast.alias));
 
     // Create entry with no-relational data.
-    const entry = await Ingredients.create(data);
+    const entry = await Ingredient.create(data);
 
     // Create relational data and return the entry.
-    return Ingredients.updateRelations({ id: entry.id, values: relations });
+    return Ingredient.updateRelations({ id: entry.id, values: relations });
   },
 
   /**
-   * Promise to edit a/an ingredients.
+   * Promise to edit a/an ingredient.
    *
    * @return {Promise}
    */
 
   edit: async (params, values) => {
     // Extract values related to relational data.
-    const relations = _.pick(values, Ingredients.associations.map(a => a.alias));
-    const data = _.omit(values, Ingredients.associations.map(a => a.alias));
+    const relations = _.pick(values, Ingredient.associations.map(a => a.alias));
+    const data = _.omit(values, Ingredient.associations.map(a => a.alias));
 
     // Update entry with no-relational data.
-    const entry = await Ingredients.update(params, data, { multi: true });
+    const entry = await Ingredient.update(params, data, { multi: true });
 
     // Update relational data and return the entry.
-    return Ingredients.updateRelations(Object.assign(params, { values: relations }));
+    return Ingredient.updateRelations(Object.assign(params, { values: relations }));
   },
 
   /**
-   * Promise to remove a/an ingredients.
+   * Promise to remove a/an ingredient.
    *
    * @return {Promise}
    */
 
   remove: async params => {
     // Select field to populate.
-    const populate = Ingredients.associations
+    const populate = Ingredient.associations
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
 
     // Note: To get the full response of Mongo, use the `remove()` method
     // or add spent the parameter `{ passRawResult: true }` as second argument.
-    const data = await Ingredients
+    const data = await Ingredient
       .findOneAndRemove(params, {})
       .populate(populate);
 
@@ -128,7 +128,7 @@ module.exports = {
     }
 
     await Promise.all(
-      Ingredients.associations.map(async association => {
+      Ingredient.associations.map(async association => {
         const search = _.endsWith(association.nature, 'One') || association.nature === 'oneToMany' ? { [association.via]: data._id } : { [association.via]: { $in: [data._id] } };
         const update = _.endsWith(association.nature, 'One') || association.nature === 'oneToMany' ? { [association.via]: null } : { $pull: { [association.via]: data._id } };
 

@@ -1,8 +1,8 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "ingredient",
   "info": {
-    "name": "ingredients",
+    "name": "ingredient",
     "description": ""
   },
   "options": {

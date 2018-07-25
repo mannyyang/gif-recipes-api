@@ -41,6 +41,9 @@
     },
     "rawRecipe": {
       "type": "text"
+    },
+    "ingredients": {
+      "type": "json"
     }
   }
 }

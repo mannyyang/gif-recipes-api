@@ -33,6 +33,12 @@
       },
       "rawRecipe": {
         "appearance": ""
+      },
+      "isProcessed": {
+        "appearance": ""
+      },
+      "ingredients": {
+        "appearance": ""
       }
     }
   },

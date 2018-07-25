@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Lifecycle callbacks for the `Ingredients` model.
+ * Lifecycle callbacks for the `Ingredient` model.
  */
 
 module.exports = {

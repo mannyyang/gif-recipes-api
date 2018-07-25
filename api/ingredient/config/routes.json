@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/ingredients",
-      "handler": "Ingredients.find",
+      "path": "/ingredient",
+      "handler": "Ingredient.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/ingredients/count",
-      "handler": "Ingredients.count",
+      "path": "/ingredient/count",
+      "handler": "Ingredient.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/ingredients/:_id",
-      "handler": "Ingredients.findOne",
+      "path": "/ingredient/:_id",
+      "handler": "Ingredient.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/ingredients",
-      "handler": "Ingredients.create",
+      "path": "/ingredient",
+      "handler": "Ingredient.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/ingredients/:_id",
-      "handler": "Ingredients.update",
+      "path": "/ingredient/:_id",
+      "handler": "Ingredient.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/ingredients/:_id",
-      "handler": "Ingredients.destroy",
+      "path": "/ingredient/:_id",
+      "handler": "Ingredient.destroy",
       "config": {
         "policies": []
       }
